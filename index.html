@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viral Doodle</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  </head>
+  <body>
+    <div class="score-display">Score: <span id="score">0</span></div>
+    <div class="mode-tabs">
+      <div class="mode-tab active" id="drawTab">✏️ Draw</div>
+      <div class="mode-tab" id="playTab">🎮 Play</div>
+    </div>
+
+    <div class="toolbar">
+      <button class="vibe-button" onclick="clearCanvas()">🧹 Clear</button>
+      <button class="vibe-button" onclick="undo()">↩️ Undo</button>
+      <input type="color" id="brushColor" value="#ffffff" />
+    </div>
+
+    <canvas id="drawCanvas" class="game-canvas"></canvas>
+    <canvas id="playCanvas" class="game-canvas hidden"></canvas>
+    <button id="playButton" class="vibe-button hidden">Play!</button>
+
+    <div id="virtualJoystick" class="mobile-only">
+      <div class="joystick-base"></div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

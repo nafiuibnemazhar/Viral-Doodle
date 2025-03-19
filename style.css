@@ -1,0 +1,110 @@
+:root {
+  --primary: #ff6b6b;
+  --secondary: #4ecdc4;
+  --bg-gradient: linear-gradient(45deg, #2c3e50, #3498db);
+  --neon-border: 2px solid rgba(78, 205, 196, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-gradient);
+  font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  touch-action: manipulation;
+}
+
+.game-canvas {
+  border: var(--neon-border);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+  background: rgba(0, 0, 0, 0.7);
+  margin: 20px;
+  cursor: url("assets/pencil-cursor.png") 0 32, auto;
+}
+
+.vibe-button {
+  background: var(--primary);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 10px;
+}
+
+.vibe-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.score-display {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  text-shadow: 0 0 10px var(--secondary);
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+
+.mode-tab {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mode-tab.active {
+  background: var(--secondary);
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Mobile Joystick */
+#virtualJoystick {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+}
+
+.joystick-base {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+  #virtualJoystick {
+    display: block;
+  }
+
+  .game-canvas {
+    width: 95vw !important;
+    height: 60vh !important;
+  }
+}
